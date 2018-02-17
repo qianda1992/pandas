@@ -1,0 +1,50 @@
+# -*- coding: utf-8 -*-
+"""
+Spyder Editor
+
+This is a temporary script file.
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+from pandas.io.parsers import read_csv
+
+#读取数据的内容
+df = read_csv("d:\MLB2008.csv")
+print ("Dataframe",df)
+#可查询数据的行列数
+print("Shape",df.shape)
+print("Length",len(df))
+
+#数据标题和数据类型
+print("Column Headers",df.columns)
+print("Data types",df.dtypes)
+
+#数据的索引
+print("Index",df.index)
+
+#遍历数据
+print("Values",df.values)
+
+#序列模型
+name = df["PLAYER"]
+print("Type df",type(df))
+print("Type name",type(name))
+print("334 335name\n",name[334:336])
+print("Series shape",name.shape)
+print("Series index",name.index)
+print("Series values",name.values)
+print("Series name",name.name)
+
+#求解薪水的相关数据
+salary = df["SALARY"]
+sum_salary = np.sum(salary)
+mean_salary = np.mean(salary)
+var_salary = np.var(salary)
+max_salary = np.max(salary)
+min_salary = np.min(salary)
+
+
+
+
